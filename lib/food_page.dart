@@ -56,8 +56,8 @@ class _FoodPageState extends State<FoodPage> {
                 onPressed: () {
                   setState(() {
                     // as the randomise button is pressed, a restaurant is being chosen from the restaurants_data list
-                    //current range is 3 restaurants
-                    restaurantNumber = Random().nextInt(3) + 1;
+                    //current range is 7 restaurants
+                    restaurantNumber = Random().nextInt(7) + 1;
 
                     //set the name of the restaurant to be the name from the random that was elected
                     nameToShow =
