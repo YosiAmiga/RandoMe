@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:random_me/food_page.dart';
-import 'constants.dart';
-import 'reusable_card.dart';
 import 'food_page.dart';
 import 'sport_page.dart';
 import 'activity_page.dart';
 import 'music_page.dart';
+import 'yosi_page.dart';
 
 enum Genders { male, female }
 
@@ -30,40 +29,12 @@ class _InputPageState extends State<InputPage> {
               //Food Section
               Expanded(
                 //MOVE TO FOOD PAGE
-                child: ReusableCard(
-                  //setting the method of the card
-                  color: Colors.grey,
-                  cardChild: FlatButton(
-                    onPressed: () {
-                      setState(() {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return FoodPage();
-                        }));
-                      });
-                    },
-                    child: Icon(Icons.food_bank),
-                  ),
-                ),
+                child: buildFoodPageButton(context),
               ),
               //Sport Section
               Expanded(
                 //MOVE TO SPORTS PAGE
-                child: ReusableCard(
-                  //setting the method of the card
-                  color: Colors.grey,
-                  cardChild: FlatButton(
-                    onPressed: () {
-                      setState(() {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return SportPage();
-                        }));
-                      });
-                    },
-                    child: Icon(Icons.sports_soccer),
-                  ),
-                ),
+                child: buildSportsPageButton(context),
               ),
             ],
           )),
@@ -72,43 +43,13 @@ class _InputPageState extends State<InputPage> {
             children: <Widget>[
               //Food Section
               Expanded(
-                //MOVE TO FOOD PAGE
-                child: ReusableCard(
-                  //setting the method of the card
-                  color: Colors.grey,
-                  cardChild: FlatButton(
-                    onPressed: () {
-                      setState(() {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return MusicPage();
-                        }));
-                      });
-                    },
-                    child: Icon(Icons.music_note),
-                  ),
-                ),
+                //MOVE TO MUSIC PAGE
+                child: buildMusicPageButton(context),
               ),
               //Sport Section
               Expanded(
-                //MOVE TO SPORTS PAGE
-                child: ReusableCard(
-                  //setting the method of the card
-                  color: Colors.grey,
-                  cardChild: FlatButton(
-                    onPressed: () {
-                      setState(() {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return ActivityPage();
-                        }));
-                      });
-                    },
-                    child: Icon(
-                      Icons.wine_bar,
-                    ),
-                  ),
-                ),
+                //MOVE TO ACTIVITY PAGE
+                child: buildActivityPageButton(context),
               ),
             ],
           )),
@@ -119,13 +60,119 @@ class _InputPageState extends State<InputPage> {
             onPressed: () {
               setState(() {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return FoodPage();
+                  return YosiPage();
                 }));
               });
             },
-            child: Text('TBD'),
+            child: Text('About myself'),
           )
         ],
+      ),
+    );
+  }
+
+  //build button methods:
+
+  ElevatedButton buildActivityPageButton(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all(CircleBorder()),
+        padding: MaterialStateProperty.all(EdgeInsets.all(50)),
+        backgroundColor:
+            MaterialStateProperty.all(Colors.purple), // <-- Button color
+        overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
+          if (states.contains(MaterialState.pressed))
+            return Colors.white; // <-- Splash color
+        }),
+      ),
+      onPressed: () {
+        setState(() {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return ActivityPage();
+          }));
+        });
+      },
+      child: Icon(
+        Icons.wine_bar,
+        size: 50,
+      ),
+    );
+  }
+
+  ElevatedButton buildMusicPageButton(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all(CircleBorder()),
+        padding: MaterialStateProperty.all(EdgeInsets.all(50)),
+        backgroundColor:
+            MaterialStateProperty.all(Colors.green), // <-- Button color
+        overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
+          if (states.contains(MaterialState.pressed))
+            return Colors.white; // <-- Splash color
+        }),
+      ),
+      onPressed: () {
+        setState(() {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return MusicPage();
+          }));
+        });
+      },
+      child: Icon(
+        Icons.music_note,
+        size: 50,
+      ),
+    );
+  }
+
+  ElevatedButton buildSportsPageButton(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all(CircleBorder()),
+        padding: MaterialStateProperty.all(EdgeInsets.all(50)),
+        backgroundColor:
+            MaterialStateProperty.all(Colors.blue), // <-- Button color
+        overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
+          if (states.contains(MaterialState.pressed))
+            return Colors.white; // <-- Splash color
+        }),
+      ),
+      onPressed: () {
+        setState(() {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return SportPage();
+          }));
+        });
+      },
+      child: Icon(
+        Icons.sports_soccer,
+        size: 50,
+      ),
+    );
+  }
+
+  ElevatedButton buildFoodPageButton(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all(CircleBorder()),
+        padding: MaterialStateProperty.all(EdgeInsets.all(50)),
+        backgroundColor:
+            MaterialStateProperty.all(Colors.red), // <-- Button color
+        overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
+          if (states.contains(MaterialState.pressed))
+            return Colors.red; // <-- Splash color
+        }),
+      ),
+      onPressed: () {
+        setState(() {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return FoodPage();
+          }));
+        });
+      },
+      child: Icon(
+        Icons.food_bank,
+        size: 50,
       ),
     );
   }
