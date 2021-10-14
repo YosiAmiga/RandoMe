@@ -66,7 +66,6 @@ class _FoodPageState extends State<FoodPage> {
                     //set the link of the restaurant to be the link from the random that was elected
                     restLink =
                         restaurantData.getRestaurantSite(restaurantNumber);
-                    print(restaurantNumber);
                   });
                 },
                 child: Text(

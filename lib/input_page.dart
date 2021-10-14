@@ -14,6 +14,9 @@ class InputPage extends StatefulWidget {
   _InputPageState createState() => _InputPageState();
 }
 
+
+//TODO 1. animations on buttons
+
 class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
