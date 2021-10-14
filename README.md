@@ -19,6 +19,9 @@ current opening screen:
 
 
 current CV page in the "about myself" at the bottom:
+first button links to my linkdin page
+second button is my contact e-mail
+third is how to find me on facebook
 
 
 
