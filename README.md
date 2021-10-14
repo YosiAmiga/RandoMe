@@ -8,6 +8,18 @@ Flutter app to randomly decide for me on activities: what to eat, where to trave
 
 the current app logo:
 
+![youtube_profile_image](https://user-images.githubusercontent.com/76450471/137335739-c7591ad0-0d5d-42e7-8fda-31560ac6f47d.png)
 
 
-![logo_transparent](https://user-images.githubusercontent.com/76450471/137335604-24214a96-2b28-4746-aa1d-2a3297c8574e.png)
+current opening screen:
+
+
+![page 1](https://user-images.githubusercontent.com/76450471/137335941-c3e9032b-37d1-40c7-b147-1f6c819fd07b.PNG)
+
+
+
+current CV page in the "about myself" at the bottom:
+
+
+
+![cvPage](https://user-images.githubusercontent.com/76450471/137336103-aa58fdda-ec84-4565-8bbb-bbf1b33ef59f.PNG)
